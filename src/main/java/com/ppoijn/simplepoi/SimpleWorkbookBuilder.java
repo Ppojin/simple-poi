@@ -64,11 +64,11 @@ public class SimpleWorkbookBuilder {
         private boolean isAutoColumnSize = false;
 
         public ElseBuilder(String sheetName) {
-            this.sheetName = sheetName;
+            this(sheetName, null);
         }
 
         public ElseBuilder(String sheetName, List<Object> headerNames) {
-            this(sheetName);
+            this.sheetName = sheetName;
             this.headerNames = headerNames;
         }
 

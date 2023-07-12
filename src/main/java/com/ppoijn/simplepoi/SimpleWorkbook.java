@@ -93,14 +93,6 @@ public class SimpleWorkbook implements AutoCloseable, SimpleSheetInterface {
     }
 
     @Override
-    public void close() {
-        currentSheet.done();
-        if (workbook != null) {
-            workbook.dispose();
-        }
-    }
-
-    @Override
     public void insertRowList(List<List<Object>> value) {
         currentSheet.insertRowList(value);
     }
@@ -133,5 +125,13 @@ public class SimpleWorkbook implements AutoCloseable, SimpleSheetInterface {
     @Override
     public void insertCell(Object value, CellStyle style) {
         currentSheet.insertCell(value, style);
+    }
+
+    @Override
+    public void close() {
+        currentSheet.done();
+        if (workbook != null) {
+            workbook.dispose();
+        }
     }
 }
